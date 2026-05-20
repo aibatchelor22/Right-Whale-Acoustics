@@ -6,7 +6,7 @@ The dataset and a detailed description may be found here: https://www.fisheries.
   
 My primary interest here is to explore upshot calls of Right Whales and to build a CNN + TCN hybrid model capable of identifying such calls in an audio file.  
   
-This is a preliminary study and I do not expect to generate a highly robust production-grade model.  I do not expect it to be highly generalizable to new ocean environments, different sensors, or to be able to detect rare call subtypes.  The dataset includes 529 total events.  Additional datasets or a dateset augmented with synthetic data would be a prerequisite for a production-grade model.  
+The dataset includes 529 total events.  Additional datasets or a dateset augmented with synthetic data would be a prerequisite for a production-grade model which is highly generalizable to new ocean environments, different sensors, and able to detect rare call subtypes.  
 
 Nonetheless, with minimal tuning this model gives an F1 score of 0.9217 (0.8849 precision, 0.9618 recall).  
   
