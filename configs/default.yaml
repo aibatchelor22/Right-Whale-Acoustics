@@ -1,0 +1,180 @@
+# =========================================
+# RIGHT WHALE DETECTOR CONFIG
+# =========================================
+
+# =========================================
+# PROJECT
+# =========================================
+
+project_name: right_whale_detector
+
+random_seed: 42
+
+# =========================================
+# PATHS
+# =========================================
+
+paths:
+
+  audio_dir: data/audio
+
+  detections_csv: >
+    data/detections/
+    NEFSC_SBNMS_200903_NOPP6_CH10_upcall-detection-log.csv
+
+  cache_dir: data/spec_cache
+
+  runs_dir: runs
+
+# =========================================
+# AUDIO
+# =========================================
+
+audio:
+
+  sample_rate: 2000
+
+  window_sec: 4.0
+
+# =========================================
+# SPECTROGRAM
+# =========================================
+
+spectrogram:
+
+  n_fft: 1024
+
+  hop_length: 64
+
+  n_mels: 128
+
+  fmin: 20
+
+  fmax: 250
+
+  min_db: -80
+
+  max_db: 0
+
+# =========================================
+# DATASET
+# =========================================
+
+dataset:
+
+  negative_ratio: 4
+
+  train_split: 0.70
+
+  val_split: 0.15
+
+  test_split: 0.15
+
+  file_level_split: true
+
+# =========================================
+# MODEL
+# =========================================
+
+model:
+
+  cnn_channels:
+    - 16
+    - 32
+    - 64
+
+  tcn_channels: 64
+
+  tcn_dilations:
+    - 1
+    - 2
+    - 4
+    - 8
+
+  dropout: 0.30
+
+# =========================================
+# TRAINING
+# =========================================
+
+training:
+
+  batch_size: 64
+
+  epochs: 20
+
+  learning_rate: 0.001
+
+  num_workers: 2
+
+  early_stopping_patience: 5
+
+  threshold: 0.50
+
+  device: auto
+
+# =========================================
+# OPTIMIZER
+# =========================================
+
+optimizer:
+
+  type: adam
+
+  weight_decay: 0.0001
+
+# =========================================
+# AUGMENTATION
+# =========================================
+
+augmentation:
+
+  enabled: false
+
+  time_shift: true
+
+  pitch_shift: false
+
+  time_stretch: false
+
+  specaugment: false
+
+  noise_mixing: false
+
+# =========================================
+# EVALUATION
+# =========================================
+
+evaluation:
+
+  save_confusion_matrix: true
+
+  save_roc_curve: true
+
+  save_pr_curve: true
+
+  save_loss_curve: true
+
+  save_metrics_json: true
+
+# =========================================
+# INFERENCE
+# =========================================
+
+inference:
+
+  sliding_window_sec: 1.0
+
+  detection_threshold: 0.50
+
+# =========================================
+# LOGGING
+# =========================================
+
+logging:
+
+  log_every_n_steps: 20
+
+  save_best_model_only: true
+
+  verbose: true
