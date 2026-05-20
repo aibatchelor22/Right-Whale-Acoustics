@@ -8,10 +8,11 @@ My primary interest here is to explore upshot calls of Right Whales and to build
 This is a preliminary study and I do not expect to generate a highly robust production-grade model.  I do not expect it to be highly generalizable to new ocean environments or to be able to detection rare call subtypes.  The dataset includes 529 total events.  A larger dataset or a dateset augmented with synthetic data would be a prerequisite for a production-grade model.  
   
 A recent example of a CNN model published by Hyer et al. utilizes multiple datasets and a system of augmentation to recognize upcalls of North Atlantic Right Whales.  
-"Robust real-time detection of right whale upcalls using neural networks on the edge"  
+"Robust real-time detection of right whale upcalls using neural networks on the edge"  Ecological Informatics
+Vol 89, 103130 (2025)  
 https://doi.org/10.1016/j.ecoinf.2025.103130  
 
-A recent example of a TCN model published by Goldwater et al. utilizes multiple datasets and synthetic data to recognize gunshot calls.  
+A recent example of a TCN model published by Goldwater et al. utilizes multiple datasets and synthetic data to recognize gunshot calls of North Pacific Right Whales.  
 "Machine-learning-based simultaneous detection and ranging of impulsive baleen whale vocalizations using a single hydrophone" J. Acoust. Soc. Am. 153, 1094–1107 (2023)  
 https://doi.org/10.1121/10.0017118  
 
