@@ -21,4 +21,4 @@ A recent example of a TCN model published by Goldwater et al. utilizes multiple 
 "Machine-learning-based simultaneous detection and ranging of impulsive baleen whale vocalizations using a single hydrophone" J. Acoust. Soc. Am. 153, 1094–1107 (2023)  
 https://doi.org/10.1121/10.0017118  
   
-!(RightWhaleUpcallResults.png)
+!([RightWhaleUpcallResults.png](https://github.com/aibatchelor22/Right-Whale-Acoustics/blob/main/RightWhaleUpcallResults.png))
