@@ -1,5 +1,6 @@
 # Right-Whale-Acoustics
-Analysis and TCN Modeling of Right Whale Calls 
+Analysis and TCN Modeling of Right Whale Upcalls  
+  
 This is a repo to explore acoustic data of North Atlantic Right Whales acquired by NOAA in 2013.  The data was collected in the Stellwagen Bank National Marine Sanctuary east of Boston between Cape Ann and Cape Cod. 
 The dataset and a detailed description may be found here: https://www.fisheries.noaa.gov/resource/data/noaa-nefsc-north-atlantic-right-whale-acoustic-data-and-annotations  
   
