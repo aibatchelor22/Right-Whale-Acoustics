@@ -27,3 +27,14 @@ https://doi.org/10.1121/10.0017118
   
   
 ![RightWhaleUpcallResults.png](https://github.com/aibatchelor22/Right-Whale-Acoustics/blob/main/RightWhaleUpcallResults.png)
+
+
+To set up the package, clone the repo and run:  
+pip install -e .  
+
+To download the data and build the dataset:  
+python scripts/download_data.py  
+python scripts/build_dataset.py  
+
+To start training:  
+python scripts/train.py  
