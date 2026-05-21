@@ -12,7 +12,7 @@ Nonetheless, with minimal tuning this model gives an F1 score of 0.9217 (0.8849 
 
 I intend to fine tune this model soon on a second NOAA dataset inlcuding NEFSC data from multiple additional sources.  
   
-Several similar studies have been published recently.  
+Several similar models have been published recently.  
   
 A recent example of a CNN model published by Hyer et al. utilizes multiple datasets and a system of augmentation to recognize upcalls of North Atlantic Right Whales.  
   
