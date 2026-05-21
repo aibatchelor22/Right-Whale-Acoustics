@@ -39,7 +39,7 @@ np.random.seed(RANDOM_SEED)
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-AUDIO_DIR = PROJECT_ROOT / "data/audio"
+AUDIO_DIR = PROJECT_ROOT / "data/right_whale_data/sbnms_200903_nopp6_ch10/audio"
 
 CSV_PATH = (
     PROJECT_ROOT
