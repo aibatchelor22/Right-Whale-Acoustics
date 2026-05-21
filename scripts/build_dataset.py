@@ -43,7 +43,7 @@ AUDIO_DIR = PROJECT_ROOT / "data/audio"
 
 CSV_PATH = (
     PROJECT_ROOT
-    / "/data/right_whale_data/sbnms_200903_nopp6_ch10/detections/NEFSC_SBNMS_200903_NOPP6_CH10_upcall-detection-log.csv"
+    / "data/right_whale_data/sbnms_200903_nopp6_ch10/detections/NEFSC_SBNMS_200903_NOPP6_CH10_upcall-detection-log.csv"
 )
 
 CACHE_DIR = (
