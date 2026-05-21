@@ -39,5 +39,5 @@ python scripts/build_dataset.py
 To start training:  
 python scripts/train.py  
 
-To evaluate the model:
+To evaluate the model:  
 python scripts/evaluate.py <run directory>
