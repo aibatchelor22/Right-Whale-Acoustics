@@ -1,3 +1,4 @@
+import argparse
 import json
 from pathlib import Path
 
@@ -24,29 +25,54 @@ from whale_detector.model import WhaleCNN_TCN
 
 
 # =========================================
-# CONFIG
+# ARGUMENTS
 # =========================================
 
-THRESHOLD = 0.40
+parser = argparse.ArgumentParser()
+
+parser.add_argument(
+    "run_dir",
+    type=str,
+    help="Path to run directory"
+)
+
+parser.add_argument(
+    "--threshold",
+    type=float,
+    default=0.40
+)
+
+args = parser.parse_args()
+
+RUN_DIR = Path(args.run_dir)
+
+THRESHOLD = args.threshold
+
+# =========================================
+# PATHS
+# =========================================
 
 DATA_DIR = Path("data/spec_cache")
 
-MODEL_PATH = Path(
-    "runs/latest/best_model.pt"
-)
+MODEL_PATH = RUN_DIR / "best_model.pt"
 
-OUTPUT_DIR = Path(
-    "runs/latest/evaluation"
-)
+OUTPUT_DIR = RUN_DIR / "evaluation"
 
 OUTPUT_DIR.mkdir(
     parents=True,
     exist_ok=True
 )
 
+# =========================================
+# DEVICE
+# =========================================
+
 DEVICE = torch.device(
     "cuda" if torch.cuda.is_available() else "cpu"
 )
+
+print()
+print("Using device:", DEVICE)
 
 # =========================================
 # DATA
@@ -67,6 +93,10 @@ test_loader = DataLoader(
 # =========================================
 
 model = WhaleCNN_TCN().to(DEVICE)
+
+print()
+print("Loading model:")
+print(MODEL_PATH)
 
 model.load_state_dict(
     torch.load(
@@ -149,7 +179,7 @@ report = classification_report(
 )
 
 # =========================================
-# PRINT
+# PRINT RESULTS
 # =========================================
 
 print()
@@ -180,6 +210,7 @@ print(report)
 # =========================================
 
 metrics = {
+    "threshold": float(THRESHOLD),
     "precision": float(precision),
     "recall": float(recall),
     "f1": float(f1),
@@ -199,6 +230,17 @@ with open(
     )
 
 # =========================================
+# SAVE CLASSIFICATION REPORT
+# =========================================
+
+with open(
+    OUTPUT_DIR / "classification_report.txt",
+    "w"
+) as f:
+
+    f.write(report)
+
+# =========================================
 # ROC CURVE
 # =========================================
 
@@ -214,12 +256,18 @@ plt.plot(fpr, tpr)
 plt.xlabel("False Positive Rate")
 plt.ylabel("True Positive Rate")
 
+plt.title("ROC Curve")
+
+plt.grid(True)
+
 plt.tight_layout()
 
 plt.savefig(
     OUTPUT_DIR / "roc_curve.png",
     dpi=300
 )
+
+plt.close()
 
 # =========================================
 # PR CURVE
@@ -242,6 +290,10 @@ plt.plot(
 plt.xlabel("Recall")
 plt.ylabel("Precision")
 
+plt.title("Precision-Recall Curve")
+
+plt.grid(True)
+
 plt.tight_layout()
 
 plt.savefig(
@@ -249,5 +301,8 @@ plt.savefig(
     dpi=300
 )
 
+plt.close()
+
 print()
-print("Saved evaluation outputs.")
+print("Saved evaluation outputs to:")
+print(OUTPUT_DIR)
