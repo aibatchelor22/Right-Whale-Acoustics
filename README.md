@@ -9,10 +9,8 @@ My primary interest here is to explore upshot calls of Right Whales and to build
 The dataset includes 8256 total events.  Additional datasets or a dateset augmented with synthetic data would be a prerequisite for a production-grade model which is highly generalizable to new ocean environments and different sensors, and able to detect rare call subtypes.  
 
 Nonetheless, with minimal tuning this model gives an F1 score of 0.9217 (0.8849 precision, 0.9618 recall).  The ROC-AUC is 0.9900, and the PR-AUC is 0.9710.
-
-I intend to fine tune this model soon on a second NOAA dataset inlcuding NEFSC data from multiple additional sources.  
   
-Several similar models have been published recently.  
+Several similar models have been published recently.  This is a more complex model in terms of its architecture, but thus far I have only trained it on a single dataset with no augmentations.  I intend to fine tune this model soon on a second NOAA dataset inlcuding NEFSC data from multiple additional sources.  
   
 A recent example of a CNN model published by Hyer et al. utilizes multiple datasets and a system of augmentation to recognize upcalls of North Atlantic Right Whales.  
   
