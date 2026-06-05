@@ -8,7 +8,7 @@
 
 project_name: right_whale_detector
 
-random_seed: 42
+random_seed: 37
 
 # =========================================
 # PATHS
