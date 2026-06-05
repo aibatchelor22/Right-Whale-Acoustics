@@ -50,7 +50,7 @@ spectrogram:
 
   fmin: 20
 
-  fmax: 250
+  fmax: 1000
 
   min_db: -80
 
